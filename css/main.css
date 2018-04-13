@@ -6,12 +6,52 @@
 article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
     display: block;
 }
-@font-face {
-    font-family: 'League Gothic';
-    src: url('fonts/league_gothic-reg.otf') format('opentype');
-}
+
 /* Colors
 Orange: #F25535
 Red: #A01D04
 Green: #A2AF3A
 */
+body {
+	margin: 5%;
+}
+h1 {
+	text-align: center;
+	font-size: 2.3rem;
+	font-family: , 'sans-serif';
+}
+nav {
+	width: 70%;
+	text-align: center;
+	list-style-type: none;
+	padding: 5px 0 5px 0;
+	margin-left: -25px;
+	float: left;
+}
+nav li {
+	display: inline;
+	padding: 8px;
+}
+nav a {
+	font-size: 1rem;
+}
+nav a:hover {
+	color: #000;
+}
+#login-button  {
+	float: right;
+	margin-right: 10px;
+	padding: 5px 5px 5px 5px;
+	font-size: 1rem;
+	background: yellow;
+}
+a {
+	text-decoration: none;
+}
+video {
+	margin: 5% 0 5% 0;
+}
+#app {
+	display: block;
+	text-align: center;
+}
