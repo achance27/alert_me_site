@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+body {background-color:rgba(0,0,0,.9);;}
+
+.curve1{
+  width:400px; height:30px;
+  border:solid 2px #000;
+  border-color:#FE3679 transparent transparent transparent;
+  border-radius: 70%/100px 100px 0 0;
+  transform: rotateX(180deg);
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: top;
+}
+
+.curve2{
+  width:530px; height:30px;
+  border:solid 3px #000;
+  border-color:#BC4AFE transparent transparent transparent;
+  border-radius: 70%/100px 100px 0 0;
+  transform: rotateX(180deg);
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: top;
+}
+
+.curve3{
+  width:620px; height:30px;
+  border:solid 4px #000;
+  border-color:#4AC2FE transparent transparent transparent;
+  border-radius: 70%/100px 100px 0 0;
+  transform: rotateX(180deg);
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: top;
+}
+h1 {
+    font-size: smaller;
+    text-align: center;
+    color:white;
+
+}
+
+h2 {
+    font-size: smaller;
+    text-align: center;
+    color:white;
+}
+
+h3 {
+    font-size: smaller;
+    text-align: center;
+    color:white;
+}
+
+.box{
+  position:relative;
+  height:20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20px;
+  border: 3px double black;
+  vertical-align: top;
+  background-color:red;
+}
+
+#blue {
+  background-color:blue;
+}
+
+#circle {
+    background-color: yellow;
+    border: 3px inset  #FE4093;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+
+
+</style>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+</head>
+
+<script>
+function myFunction() {
+	//document.getElementById("myblah").innerHTML = "Hello World!";
+
+   var socket = io();
+   /*socket.on('hi_from_server', function(data){
+     document.getElementById("myText").innerHTML = data.message;
+   });*/
+
+
+
+
+  socket.on('distance', function(data){
+
+     var linearScale = d3.scale.linear()
+        .domain([0, 5])
+        .range([10, 100]);
+
+        document.getElementById("myDistance").innerHTML = data.distance;
+        var distance = data.distance;
+        var yVal = (linearScale(distance));
+
+        TweenLite.to("#circle", 2, {
+            y: yVal,
+            ease: 'easeOutExpo'
+          });
+
+
+
+});
+
+
+
+}
+
+
+
+</script>
+
+
+<body onload="myFunction();">
+
+
+<div class="box" id="blue"></div>
+<div id="circle"></div>
+
+<div class="curve1"></div>
+<h1> near </h1>
+<div class="curve2"></div>
+<h2> intermediate </h2>
+<div class="curve3"></div>
+<h3> far </h3>
+
+
+
+<span id="myText"></span>
+<span id="myDistance"></span>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/easing/EasePack.min.js"></script>
+</body>
+</html>

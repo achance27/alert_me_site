@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display: block;
+}
+
+/* Colors
+*/
+body {
+	margin: 5%;
+	background-color: #caf7cc;
+}
+h1 {
+	text-align: center;
+	font-size: 2.3rem;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+nav {
+	width: 70%;
+	text-align: center;
+	list-style-type: none;
+	padding: 5px 0 5px 0;
+	margin-left: -30px;
+	float: left;
+}
+nav li {
+	display: inline;
+	padding: 8px;
+	font-family: 'Open Sans', sans-serif;
+}
+nav a {
+	font-size: 1rem;
+	color: #000;
+}
+nav a:hover {
+	color: green;
+}
+#login-button  {
+	float: right;
+	margin-right: 10px;
+	margin-left:;
+	padding: 5px 5px 5px 5px;
+	font-size: 1rem;
+	background: #000;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+}
+#login-button:hover {
+	background-color: #fff;
+	color: #000;
+}
+a {
+	text-decoration: none;
+}
+video {
+	margin: 5% 0 5% 0;
+}
+#app {
+	display: block;
+	margin-left: 40%;
+	max-width: 60px;
+}
+
+h2 {
+	margin: 50px 0 15px 50px;
+	font-family: 'Open Sans', sans-serif;
+}
+p {
+	margin-top: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* Login Page */
+form {
+	margin: 10px 10px 5px 40px;
+	background-color: #fff;
+	padding: 25px;
+	-webkit-box-shadow: 1px 1px 4px 2px #9AB36F;
+box-shadow: 1px 1px 4px 2px #9AB36F;
+}
+input {
+	width: 200px;
+	background-color: #e8ede8;
+	padding: 10px;
+	margin: 8px 0;
+	border-style: solid;
+	border-radius: 1px;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alert Me</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+    <script defer src="/__/firebase/4.12.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.12.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.12.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.12.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.12.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Alert Me</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" id="login-button">Login/Sign Up</a>
+  </header>
+  <div>
+    <main>
+      <h2>Register</h2>
+      <form action="/action_page.php">
+        <p>Email</p>
+          <input type="text" id="email_field" placeholder="Email">
+        <p>Phone Number</p>
+          <input type="text" id="phone_field" placeholder="Phone #">
+        <p>Password</p>
+          <input type="text" id="password_field" placeholder="Password">
+          <button type="button" value="Submit" onclick="registerClick()">Submit</button>
+      </form>
+
+    </main>
+	</div>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDdU9XSp6orwPATNLutAPSaOxLPUXMKeaU",
+      authDomain: "alertme-7a04b.firebaseapp.com",
+      databaseURL: "https://alertme-7a04b.firebaseio.com",
+      projectId: "alertme-7a04b",
+      storageBucket: "alertme-7a04b.appspot.com",
+      messagingSenderId: "895964783289"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>
